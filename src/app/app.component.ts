@@ -6,7 +6,7 @@ import { UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators} f
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedValue = true
+  selectedValue = false
 
   validateForm!: UntypedFormGroup;
   listOfControl: Array<{ id: number; controlInstance: string }> = [];
@@ -15,7 +15,7 @@ export class AppComponent {
     if (e) {
       e.preventDefault();
     }
-    
+    this.selectedValue = true
     const id = this.listOfControl.length > 0 ? this.listOfControl[this.listOfControl.length - 1].id + 1 : 0;
 
     const control = {

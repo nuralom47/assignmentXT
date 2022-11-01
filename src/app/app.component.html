@@ -25,32 +25,34 @@
             </nz-form-control>
           </nz-form-item>
           
-          <nz-form-item *ngFor="let control of listOfControl; let i = index">
+          <div *ngIf="!selectedValue">
+            <nz-form-item *ngFor="let control of listOfControl; let i = index">
       
-            <nz-form-control
-              [nzXs]="24"
-              [nzSm]="20"
-              [nzOffset]="i === 0 ? 0 : 4"
-            >
-              <div 
-              nz-row [attr.id]="control.id"
-              [formControlName]="control.controlInstance"
-              nz-row [nzGutter]="95"
+              <nz-form-control
+                [nzXs]="24"
+                [nzSm]="20"
+                [nzOffset]="i === 0 ? 0 : 4"
               >
-                <div nz-col class="gutter-row" nzSpan="2">Min</div>
-                <div nz-col class="gutter-row" nzSpan="2">Max</div>
-                <div nz-col class="gutter-row" nzSpan="2">SD</div>
-                <div nz-col class="gutter-row" nzSpan="2">MD</div>
-                <div nz-col class="gutter-row" nzSpan="2">DIST</div>
-                <div nz-col class="gutter-row" nzSpan="2">RET</div>
-                <div nz-col class="gutter-row" nzSpan="2">A</div>
-                <div nz-col class="gutter-row" nzSpan="2">M</div>
-                <div nz-col class="gutter-row" nzSpan="4">TDS</div>
-                <div nz-col class="gutter-row" nzSpan="4">GST</div>
-              </div>  
-
-            </nz-form-control>
-          </nz-form-item>
+                <div 
+                nz-row [attr.id]="control.id"
+                [formControlName]="control.controlInstance"
+                nz-row [nzGutter]="95"
+                >
+                  <div nz-col class="gutter-row" nzSpan="2">Min</div>
+                  <div nz-col class="gutter-row" nzSpan="2">Max</div>
+                  <div nz-col class="gutter-row" nzSpan="2">SD</div>
+                  <div nz-col class="gutter-row" nzSpan="2">MD</div>
+                  <div nz-col class="gutter-row" nzSpan="2">DIST</div>
+                  <div nz-col class="gutter-row" nzSpan="2">RET</div>
+                  <div nz-col class="gutter-row" nzSpan="2">A</div>
+                  <div nz-col class="gutter-row" nzSpan="2">M</div>
+                  <div nz-col class="gutter-row" nzSpan="4">TDS</div>
+                  <div nz-col class="gutter-row" nzSpan="4">GST</div>
+                </div>  
+  
+              </nz-form-control>
+            </nz-form-item>
+          </div>
         </nz-form-item>
           
         <nz-form-item>
